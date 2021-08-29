@@ -1,0 +1,422 @@
+/* GLOBAL STYLES */
+
+/* VARIABLES */
+
+:root {
+  /* main colour */
+  --second-color: rgba(54, 0, 168, 1);
+  --main-white: white;
+  /* modal */
+  --modalBlue: #3a0cac;
+  --darGrey: #7c7c7c;
+  --lghtGrey: #d2cce2;
+  /* font weight */
+  --heavyWeight: 700;
+  /* main font */
+  --mainFont: "Montserrat", sans-serif;
+  /* Colors for input errors */
+  --errorMsg: #fa3246;
+  --error-border: 1px solid #fa3246;
+  --error-shadow: #fa3246 0 0 1.5px 1px;
+
+  --default-border: 1px solid rgb(118, 118, 118);
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: var(--main-white);
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====================
+    BANNER STYLES 
+======================*/
+
+.banner {
+  height: 100vh;
+  width: 100vw;
+  background: url(./images/bg.jpg) center/cover no-repeat;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.intro-container {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 70%;
+  padding-top: 4vw;
+  padding-right: 3vw;
+  padding-bottom: 3vw;
+  padding-left: 3vw;
+}
+
+.icon-collection {
+  order: 1;
+}
+
+.cta-text {
+  order: 2;
+}
+
+.cta-text p {
+  line-height: 1.6em;
+}
+
+.mobile-text{
+  display: inline-block;
+}
+
+.desktop-text{
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--main-white);
+  color: var(--second-color);
+  font-weight: var(--heavyWeight);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  width: 180px;
+  padding: 1.25em 2em;
+  border-radius: 50px;
+}
+
+@media only screen and (min-width: 481px) {
+  .banner {
+    justify-items: start;
+  }
+  .intro-container {
+    position: relative;
+    top: -3em;
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 3vw;
+  }
+
+  .cta-title {
+    font-size: 2.2rem;
+    margin: 0;
+  }
+
+  .icon-collection {
+    order: 2;
+    position: relative;
+    bottom: -3em;
+  }
+
+  .cta-text {
+    order: 1;
+    text-align: left;
+    font-size: .85rem;
+  }
+
+  .cta-btn {
+    text-align: center;
+    width: 85%;
+    font-size: 0.96rem;
+  }
+
+  .mobile-text{
+    display: none;
+  }
+
+  .desktop-text {
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .intro-container {
+    position: unset;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    min-width: 680px;
+    max-width: 900px;
+  }
+
+  
+  .cta-title {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .cta-text {
+    width: 100%;
+    font-size: 1rem;
+    max-width: 600px;
+    padding-top: 9.6px;
+    padding-right: 9.6px;
+    padding-bottom: 9.6px;
+    padding-left: 9.6px;
+  }
+
+
+  .cta-btn {
+    width: 30%;
+  }
+
+  .icon-collection {
+    position: unset;
+  }
+
+  .icons-desktop{
+    width: 100%;
+    max-width: 230px;
+  }
+}
+
+/* ======================
+    FEATURES SECTION STYLE
+========================= */
+
+.app-container {
+  width: 100vw;
+  background: rgba(54, 0, 168, 1);
+}
+
+.features {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-items: center;
+  margin-top: 1em;
+}
+
+.icon-container {
+  width: 75%;
+  font-size: 0.77rem;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.icon {
+  width: 100%;
+  max-width: 100px;
+}
+
+@media only screen and (min-width: 768px) {
+  .app-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .features {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: space-evenly;
+    max-width: 768px;
+  }
+
+  .icon-container {
+    flex: 0 0 200px;
+    font-size: 0.889rem;
+  }
+}
+
+/* =================
+      FOOTER 
+====================*/
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding-top: 3em;
+  text-align: center;
+}
+
+.footer > .btn {
+  width: 98px;
+  padding: 1.25em 2em;
+  font-size: 16px;
+  line-height: 1.125em;
+  word-wrap: break-word;
+}
+
+.copyright {
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 481px) {
+  .footer > .btn {
+    width: 30%;
+  }
+}
+
+/* MODAL */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  display: none;
+}
+
+/* open the modal */
+
+.open-modal {
+
+  display: block;
+  z-index: 1;
+}
+
+
+/* ================
+ MODAL CONTAINER
+ ================== */
+
+.modal-container {
+  position: relative;
+  top: 50vh;
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 700px;
+  height: 45vh;
+  display: grid;
+  place-items: center;
+  background: var(--main-white);
+
+}
+
+.fadeIn{
+  animation-name: floatup;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.fadeOut{
+  animation-name: floatdown;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes floatup {
+  from {
+    top: 50vh;
+    opacity: 0;
+  }
+  to {
+    top: 25vh;
+    opacity: 1;
+  }
+}
+@keyframes floatdown {
+  from {
+    top: 25vh;
+    opacity: 1;
+  }
+  to {
+    top: 50vh;
+    opacity: 0;
+  }
+}
+
+
+
+/* MODAL CONTENT */
+
+.modal-content {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  margin: 2em auto;
+}
+
+.modal-title {
+  text-align: left;
+  font-size: 1.4rem;
+  color: var(--modalBlue);
+  margin-left: .5em;
+}
+
+label,
+input::placeholder {
+  color: #949494;
+  font-size: 0.9rem;
+}
+
+input[type="email"] {
+  font-family: var(--mainFont);
+  height: 1em;
+  margin: 0.5em 0;
+}
+
+input::placeholder {
+  font-size: 0.9rem;
+  font-family: var(--mainFont);
+}
+
+input {
+  padding: 0.5em;
+}
+
+.error{
+  color: var(--errorMsg);
+  font-size: .7rem;
+  margin: 0 0 .8em 0;
+  display: none;
+}
+
+.sub-btn {
+  margin-top: 0.5em;
+  padding: 1.4em 2em;
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--modalBlue);
+  color: var(--main-white);
+  border: none;
+  font-size: 0.8rem;
+  font-weight: var(--heavyWeight);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.modal-text {
+  color: var(--darGrey);
+  margin-top: 2em;
+  font-size: 0.55rem;
+  text-align: center;
+}
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6em;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  fill: #999999;
+  background: #dde2eb;
+}
+
